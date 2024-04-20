@@ -13,20 +13,18 @@ This project uses python 3 and above and the PIP following packages:
 
 See requirements.txt and Dockerfile for versions and required APT packages
 
-### Using Docker
+Using Docker
 ```
 docker build -t hands-classifier .
 docker run -it hands-classifier bash
 ```
-### Install using PIP
+Install using PIP
 ```
 pip3 install -r requirements.txt
 ```
-### Training
-
 To train the model, use the following command (see framework github link for more command options):
 ```
-python3 train.py \
+python train.py \
   --bottleneck_dir=logs/bottlenecks \
   --how_many_training_steps=2000 \
   --model_dir=inception \
@@ -35,17 +33,14 @@ python3 train.py \
   --output_labels=logs/trained_labels.txt \
   --image_dir=./dataset
 ```
-  
-### Classifying
+
   
 To test classification, use the following command:
 ```
-python3 classify.py path/to/image.jpg
+python classify.py path/to/image.jpg
 ```
-
-### Using webcam (demo)
 
 To use webcam, use the following command:
 ```
-python3 classify_webcam.py
+python classify_webcam.py
 ```
